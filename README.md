@@ -15,6 +15,8 @@ In the final "Tidy.txt" dataset the following variables are present:
 The main datasets are the dollowing:  
 - data_mean_std - merged dataset with both training and test data with all the needed variables  
 - data_mean_std_1 - merged dataset with both training and test data with all the needed variables with descriptive activity names within ActivityID variable  
-- data_tidy - the final dataset with merged training and test data with all the needed variables with descriptive activity names within ActivityID variable with aggregated average of each variable for each activity and each subject.
+- data_tidy - the final dataset with merged training and test data with all the needed variables with descriptive activity names within ActivityID variable with aggregated average of each variable for each activity and each subject (Tidy.txt).
 
 The following script contains all the data cleaning and needed transformations as well as "Tidy" database compostion: "run_analysis.R"
+
+The data cleaning and needed transformations with description is presented in Markdoen file "Course_work.html".
