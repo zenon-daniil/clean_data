@@ -1,7 +1,7 @@
 Getting and Cleaning Data Course Project
 ========================================
 
-## Data merge 
+*Data merge 
 
 First we need to merge  the training and the test sets to create one data set.
 ```{r, message=FALSE, warning=FALSE}
@@ -34,7 +34,7 @@ colnames(feat_x) <- t(feat[2])
 data_merged <- cbind(feat_x,act_y,subj)
 ```
 
-##Extracting variables of interest
+*Extracting variables of interest
 
 Next we exctract only the measurements on the mean and standard deviation for each measurement.
 ```{r}
@@ -43,8 +43,7 @@ names_feat <- c(as.character(feat_mean_std), "SubjectID", "ActivityID" )
 data_mean_std <- subset(data_merged,select=names_feat)
 ```
 
-
-##Adding descriptive variable names 
+*Adding descriptive variable names 
 
 Next we labele the data set with appropriate descriptive variable names.
 ```{r}
@@ -53,7 +52,7 @@ data_mean_std <- (grepl("ActivityID" , columns) | grepl("SubjectID" , columns) |
 data_mean_std_1 <- data_merged[ , data_mean_std == TRUE]
 ```
 
-#Activity names
+*Activity names
 
 We assign descriptive activity names to name the activities in the data set
 ```{r}
@@ -65,8 +64,7 @@ data_mean_std_1$ActivityID[data_mean_std_1$ActivityID == '5'] <- 'STANDING'
 data_mean_std_1$ActivityID[data_mean_std_1$ActivityID == '6'] <- 'LAYING'
 table(data_mean_std_1$ActivityID)
 ```
-
-##Tidy dataste composition
+*Tidy dataste composition
 
 We create independent tidy data set with the average of each variable for each activity and each subject.
 ```{r}
